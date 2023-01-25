@@ -167,6 +167,9 @@ return [
          * Package Service Providers...
          */
         Barryvdh\Debugbar\ServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -233,6 +236,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         //Installed Packages
         'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
+        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 
