@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
-use App\Models\User;
+
+use App\Http\Controllers\EmployeeController;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        Paginator::useBootstrap();
 
         /**
             view()->share('data', [1, 2, 3]);
@@ -35,10 +38,10 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('user', $user);
             });
 
-            app()->singleton('created-new-binding1', function (){
+            app()->singleton('created_new_binding1', function (){
                 dd('created new binding1 ... ');
             });
-            app()->bind('created-new-binding2', function (){
+            app()->bind('created_new_binding2', function (){
                 dd('created new binding2 ... ');
             });
         **/
